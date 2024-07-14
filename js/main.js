@@ -91,8 +91,6 @@
     
     
     // Back to top button
-// Function to handle back-to-top button visibility and functionality
-function initializeBackToTop() {
     $(window).scroll(function () {
         if ($(this).scrollTop() > 200) {
             $('.back-to-top').fadeIn('slow');
@@ -100,15 +98,13 @@ function initializeBackToTop() {
             $('.back-to-top').fadeOut('slow');
         }
     });
-
     $('.back-to-top').click(function () {
         $('html, body').animate({scrollTop: 0}, 1500, 'easeInOutExpo');
         return false;
     });
-}
 
-// Function to initialize the testimonials carousel
-function initializeTestimonialCarousel() {
+
+    // Testimonials carousel
     $(".testimonial-carousel").owlCarousel({
         autoplay: true,
         smartSpeed: 1500,
@@ -116,37 +112,6 @@ function initializeTestimonialCarousel() {
         loop: true,
         items: 1
     });
-}
-
-// Function to initialize the certification carousel
-function initializeCertificationCarousel() {
-    $(document).ready(function(){
-        $('.certification-carousel').owlCarousel({
-            loop: true,
-            margin: 10,
-            nav: true,
-            responsive: {
-                0: {
-                    items: 1
-                },
-                600: {
-                    items: 2
-                },
-                1000: {
-                    items: 3
-                }
-            }
-        });
-    });
-}
-
-// Call the functions to initialize the functionality
-$(document).ready(function() {
-    initializeBackToTop();
-    initializeTestimonialCarousel();
-    initializeCertificationCarousel();
-});
-
     
 })(jQuery);
 
